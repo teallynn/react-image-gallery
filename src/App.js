@@ -17,14 +17,14 @@ class App extends Component {
       <BrowserRouter>
         <div class="container">
 
-        <Search />
+        <Route path='/search' component={Search} />
 
           <Header />
 
           <Switch>
-            <Route to path='/tapirs' component={Tapirs}/>
-            <Route to path='/trees' component={Trees}/>
-            <Route to path='/whales' component={Whales}/>
+            <Route path='/tapirs' component={Tapirs}/>
+            <Route path='/trees' component={Trees}/>
+            <Route path='/whales' component={Whales}/>
           </Switch>
 
         </div>
