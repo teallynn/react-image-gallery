@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
 import Header from './components/Header';
-import Search from './components/Search';
+import SearchForm from './components/SearchForm';
 import Tapirs from './components/Tapirs';
 import Trees from './components/Trees';
 import Whales from './components/Whales';
@@ -15,9 +14,9 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div class="container">
+        <div className="container">
 
-        <Route path='/search' component={Search} />
+        <Route path='/search' component={SearchForm} />
 
           <Header />
 
