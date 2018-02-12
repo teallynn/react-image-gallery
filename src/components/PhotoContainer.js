@@ -11,7 +11,7 @@ class PhotoContainer extends Component {
     super(props);
     this.state = {
       pics: [],
-      loaded: false,
+      loading: true,
       topic: this.props.topic
     };
   }
@@ -21,7 +21,7 @@ class PhotoContainer extends Component {
       .then(response => {
         this.setState({
           pics: response.data.photos.photo,
-          loaded: true
+          loading: false
         });
       })
       .catch(function (error) {
@@ -33,8 +33,11 @@ class PhotoContainer extends Component {
     return(
       <div className="photo-container">
         <h2>{this.props.title}</h2>
-
-          <PhotoList data={this.state.pics}/>
+          {
+            (this.state.loading)
+            ? <p>Data is loading...</p>
+            : <PhotoList data={this.state.pics}/>
+          }
 
       </div>
     );

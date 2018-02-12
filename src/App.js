@@ -10,6 +10,8 @@ import {
     Route,
     Switch
  } from 'react-router-dom';
+ import NotFound from './components/NotFound';
+ import Home from './components/Home';
 
 class App extends Component {
   render() {
@@ -22,11 +24,13 @@ class App extends Component {
           <Header />
 
           <Switch>
+            <Route exact path='/' component={Home}/>
             <Route exact path='/search' component={SearchForm} />
             <Route path='/tapirs' component={Tapirs}/>
             <Route path='/trees' component={Trees}/>
             <Route path='/whales' component={Whales}/>
             <Route path='/search/:topic' component ={SearchResults} />
+            <Route component={NotFound}/>
           </Switch>
 
         </div>
