@@ -7,7 +7,7 @@ class SearchForm extends Component{
   constructor() {
       super();
       this.state = {
-        searchTopic: 'dogs'
+        searchTopic: ''
       };
   }
 
@@ -34,8 +34,6 @@ class SearchForm extends Component{
             </svg>
           </button>
         </form>
-
-        <SearchResults topic={this.state.searchTopic} />
       </div>
 
 

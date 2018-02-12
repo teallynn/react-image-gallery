@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PhotoList from './PhotoList';
 import axios from 'axios';
+import apiKey from '../config.js';
 
-const apiKEY = '678754dac22a1763de2dd920377ab18b';
+const key = apiKey;
 
 class PhotoContainer extends Component {
 
@@ -16,7 +17,7 @@ class PhotoContainer extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKEY}&tags=${this.state.topic}&per_page=32&format=json&nojsoncallback=1`)
+    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${key}&tags=${this.state.topic}&per_page=32&format=json&nojsoncallback=1`)
       .then(response => {
         this.setState({
           pics: response.data.photos.photo,
@@ -24,7 +25,7 @@ class PhotoContainer extends Component {
         });
       })
       .catch(function (error) {
-        console.log('Error fetching and parsing data', error);
+        <h3>Error fetching and parsing data:{ error }</h3>;
       });
   }
 

@@ -1,9 +1,13 @@
 import React from 'react';
 import PhotoContainer from './PhotoContainer';
 
-const SearchResults = props => (
+const SearchResults = ({match}) => {
 
-  <PhotoContainer title='Search Results' topic={props.topic} />
-)
+
+  return(
+
+    <PhotoContainer title='Search Results' topic={match.params.topic} />
+  );
+}
 
 export default SearchResults;

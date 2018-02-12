@@ -17,15 +17,16 @@ class App extends Component {
       <BrowserRouter>
         <div className="container">
 
-        <Route path='/search' component={SearchForm} />
+
 
           <Header />
 
           <Switch>
+            <Route exact path='/search' component={SearchForm} />
             <Route path='/tapirs' component={Tapirs}/>
             <Route path='/trees' component={Trees}/>
             <Route path='/whales' component={Whales}/>
-            <Route path='/search/:searchTopic' component={SearchResults}/>
+            <Route path='/search/:topic' component ={SearchResults} />
           </Switch>
 
         </div>
