@@ -7,6 +7,7 @@ const Header = props => (
       <li><NavLink to='/tapirs'>Tapirs</NavLink></li>
       <li><NavLink to='/trees'>Trees</NavLink></li>
       <li><NavLink to='/whales'>Whales</NavLink></li>
+      <li><NavLink to='/search'>Search</NavLink></li>
     </ul>
   </nav>
 )
